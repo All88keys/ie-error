@@ -9,7 +9,7 @@ var mouse = {
   	y:0
 }
 document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
-parent.document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
+window.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
 window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
