@@ -10,7 +10,7 @@ var mouse = {
 }
 
 document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
-window.parent.addEventListener('mousemove',function(e){(mouse.x/window.parent.innerWidth)*window.innerWidth = e.pageX; (mouse.y/window.parent.innerHeight)*window.innerHeight  = e.pageY}, false);
+window.parent.addEventListener('mousemove',function(e){ mouse.x = (e.pageX/window.parent.innerWidth)*window.innerWidth; mouse.y = (e.pageY/window.parent.innerHeight)*window.innerHeight;}, false);
 window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
