@@ -6,9 +6,10 @@ img.src = 'data:image/gif;base64,R0lGODlhowEaAeMCANTQyAAAAP///4CAgAAAgAAA////AIC
 
 var mouse = {
 	x:0,
-  y:0
+  	y:0
 }
 document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
+parent.document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
 window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
