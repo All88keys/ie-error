@@ -8,8 +8,9 @@ var mouse = {
 	x:0,
   	y:0
 }
+
 document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
-window.parent.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY}, false);
+window.parent.addEventListener('mousemove',function(e){(mouse.x/window.parent.innerWidth)*window.innerWidth = e.pageX; (mouse.y/window.parent.innerHeight)*window.innerHeight  = e.pageY}, false);
 window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
