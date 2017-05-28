@@ -20,7 +20,7 @@ function resizeCanvas() {
 
 resizeCanvas();
 setInterval(function(){
-  ctx.fillStyle="hsla("+Math.floor((mouse.x/c.width)+(mouse.y/c.height)*360)+", 100%, 50%, 1.0)";
+  ctx.fillStyle="hsla("+Math.floor((mouse.x/c.width*360)+(mouse.y/c.width*360))+", 100%, 50%, 1.0)";
   //"rgb("+Math.floor((mouse.x/c.width)*255)+","+Math.floor((mouse.y/c.height)*255)+","+Math.floor((mouse.x/c.width)*255)+")";
   ctx.fillRect(mouse.x-(img.width/2),mouse.y-(img.height/2),img.width-4,img.height);
   ctx.drawImage(img,mouse.x-(img.width/2),mouse.y-(img.height/2));
