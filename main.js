@@ -10,8 +10,8 @@ var mouse = {
   	y:0
 }
 
-document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY; color++;}, false);
-window.parent.addEventListener('mousemove',function(e){ mouse.x = (e.pageX/window.parent.innerWidth)*window.innerWidth; mouse.y = (e.pageY/window.parent.innerHeight)*window.innerHeight;; color++;}, false);
+document.addEventListener('mousemove',function(e){mouse.x = e.pageX; mouse.y = e.pageY; color+=.1;}, false);
+window.parent.addEventListener('mousemove',function(e){ mouse.x = (e.pageX/window.parent.innerWidth)*window.innerWidth; mouse.y = (e.pageY/window.parent.innerHeight)*window.innerHeight;; color+=.1;}, false);
 window.addEventListener('resize', resizeCanvas, false);
 
 function resizeCanvas() {
@@ -21,7 +21,7 @@ function resizeCanvas() {
 
 resizeCanvas();
 setInterval(function(){
-  ctx.fillStyle="hsla("+color+", 100%, 50%, 1.0)";;
+  ctx.fillStyle="hsla("+Math.floor(color)+", 100%, 50%, 1.0)";;
   //"hsla("+Math.floor((mouse.x/c.width*360)+(mouse.y/c.width*360))+", 100%, 50%, 1.0)";
   //"rgb("+Math.floor((mouse.x/c.width)*255)+","+Math.floor((mouse.y/c.height)*255)+","+Math.floor((mouse.x/c.width)*255)+")";
   ctx.fillRect(mouse.x-(img.width/2),mouse.y-(img.height/2),img.width-4,img.height);
